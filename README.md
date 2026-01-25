@@ -101,22 +101,6 @@ E-CommerceASP/
 ├── Style/                     # Custom stylesheets
 └── Web.config                # Application configuration
 ```
-
-## 🎯 Key Pages & Routes
-
-| Route | Description | User Type |
-|-------|-------------|-----------|
-| `/Home/Homepage` | Main landing page | Public |
-| `/Home/cusLogin` | Customer login | Customer |
-| `/Home/cusRegistration` | Customer registration | Customer |
-| `/Home/cusHomepage` | Customer dashboard | Customer |
-| `/Home/cusProducts` | Browse products | Customer |
-| `/Home/cusAddToCart` | Shopping cart | Customer |
-| `/Home/adminHomepage` | Admin dashboard | Admin |
-| `/Home/Products` | Product management | Admin |
-| `/Home/ProductEntryForm` | Add new products | Admin |
-| `/Home/customers` | Customer management | Admin |
-
 ## 🗄️ Database
 
 The application uses SQL Server LocalDB with the following database:
@@ -192,4 +176,4 @@ For support, please open an issue in the GitHub repository or contact the develo
 
 ---
 
-**Built with ❤️ using ASP.NET MVC**
+**Built with ❤️ by Kentsuuii using ASP.NET MVC**
