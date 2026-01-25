@@ -1,0 +1,53 @@
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <link href="~/Style/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <form id="loginForm" class="form-container">
+            <div class="form-group">
+                <label for="login">Email or Username:</label>
+                <input type="text" id="login" name="login" placeholder="Email or Username" required />
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Password" required />
+            </div>
+            <button type="submit" id="btnLogin" class="btn-submit">Login</button>
+            <a href="../Home/cusRegistration" class="nav-link">Don't have an account yet? Register here.</a>
+        </form>
+    </div>
+
+    <script src="~/Scripts/jquery-3.7.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#loginForm").submit(function (event) {
+                event.preventDefault();
+
+                var login = $('#login').val();
+                var password = $('#password').val();
+
+               
+                $.post("../Home/LoginUser", {
+                    login: login,
+                    password: password
+                }, function (res) {
+                    if (res.length > 0 && res[0].success) {
+                        alert("Login Successful!");
+                        window.location.href = "../Home/Homepage";
+                     
+                    } else {
+                        alert("Login Failed: " + res[0].message);
+                    }
+                }).fail(function () {
+                    alert("An error occurred during login.");
+                });
+            });
+        });
+    </script>
+</body>
+</html>

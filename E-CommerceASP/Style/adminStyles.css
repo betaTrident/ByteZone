@@ -1,0 +1,192 @@
+﻿body {
+    padding-top: 120px;
+}
+
+.jumbotron {
+    background-image: url('../scripts/images/bytezonebanners.gif');
+    background-size: cover;
+    background-position: center;
+    color: #00EBF4;
+    padding: 150px 0;
+    text-align: center;
+}
+
+    .jumbotron h1 {
+        font-size: 3.5rem;
+        font-weight: bold;
+    }
+
+    .jumbotron p {
+        font-size: 1.5rem;
+    }
+
+.navbar-brand img {
+    max-height: 50px;
+    margin-right: 10px;
+}
+
+.move-down {
+    margin-top: 50px;
+}
+
+.navbar-nav {
+    flex-direction: row;
+}
+
+.nav-item {
+    margin: 0 10px;
+}
+
+.nav-link {
+    text-align: center;
+}
+
+.login-signup {
+    display: flex;
+    align-items: center;
+}
+
+.btn-outline-light {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-width: 2px;
+}
+
+.bottom-navbar {
+    margin-top: 70px;
+}
+
+.product-cards {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-card {
+    margin-top: 30px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.card-title {
+    margin-top: 10px;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.card-body {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card {
+    height: 500px;
+}
+
+/* Modal Styles */
+.modal-style .container {
+    padding: 2rem 0rem;
+}
+
+.modal-style .modal-dialog {
+    max-width: 400px;
+}
+
+.modal-style .modal-content {
+    padding: 1rem;
+}
+
+.modal-style .modal-header .btn-close {
+    margin-right: -1rem;
+}
+
+.modal-style .form-title {
+    margin: -2rem 0rem 2rem;
+}
+
+.modal-style .btn-round {
+    border-radius: 3rem;
+}
+
+.modal-style .modal-body {
+    padding-bottom: 2rem;
+}
+
+.modal-style .modal-footer {
+    padding-top: 2rem;
+}
+
+.modal-style .signup-section {
+    padding: 0.3rem 0rem;
+}
+
+.custom-login-btn {
+    width: 100%;
+}
+
+/* Custom styles for the search bar */
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    flex: 1;
+    border-radius: 20px;
+    padding: 8px 15px;
+    border: 1px solid #ced4da; /* Bootstrap's default border color */
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+    .search-input:focus {
+        border-color: #80bdff; /* Bootstrap's focus border color */
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Bootstrap's focus box shadow */
+    }
+
+.search-button {
+    border-radius: 20px;
+    padding: 8px 20px;
+    margin-left: 10px;
+}
+
+/* Adjustments for small screens */
+@media (max-width: 576px) {
+    .search-input {
+        width: 100%;
+    }
+
+    .search-button {
+        margin-top: 10px;
+        margin-left: 0;
+    }
+}
+
+/* Adjust the margin to create space between search bar and dropdown */
+.search-form {
+    margin-right: 10px; /* Adjust this value to add space */
+}
+
+.dropdown {
+    margin-left: 10px; /* Adjust this value to add space */
+}
+.input-group input[type="number"]::-webkit-inner-spin-button,
+.input-group input[type="number"]::-webkit-outer-spin-button,
+.input-group input[type="number"] {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    appearance: none;
+    margin: 0; /* Remove default margin */
+}
+
+.hidden {
+    display: none;
+}

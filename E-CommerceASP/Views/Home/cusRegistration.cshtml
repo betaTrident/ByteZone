@@ -1,0 +1,89 @@
+﻿@{
+    Layout = null;
+}
+
+<html>
+<body>
+    <link href="~/Style/styles.css" rel="stylesheet" />
+
+    <div class="container">
+        
+        <form id="registerForm" class="form-container">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Username" required />
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Password" required />
+            </div>
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" placeholder="First Name" required />
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Last Name" required />
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="Email" required />
+            </div>
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" required />
+            </div>
+            <div class="form-group">
+                <label for="birthDate">Date of Birth:</label>
+                <input type="date" id="birthDate" name="birthDate" placeholder="Date of Birth" required />
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" placeholder="Address" required />
+            </div>
+            <button type="submit" id="btn" class="btn-submit">Register</button>
+            <a href="../Home/cusLogin" class="nav-link">Already have an account ?</a>
+
+        </form>
+    </div>
+
+    <script src="~/Scripts/jquery-3.7.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#registerForm").submit(function (event) {
+                event.preventDefault();
+
+                var username = $('#username').val();
+                var password = $('#password').val();
+                var firstName = $('#firstName').val();
+                var lastName = $('#lastName').val();
+                var email = $('#email').val();
+                var phoneNumber = $('#phoneNumber').val();
+                var birthDate = $('#birthDate').val();
+                var address = $('#address').val();
+
+                $.post("../Home/RegisterUser", {
+                    username: username,
+                    password: password,
+                    firstName: firstName,
+                    lastName: lastName,
+                    email: email,
+                    phoneNumber: phoneNumber,
+                    birthDate: birthDate,
+                    address: address
+                }, function (res) {
+                    if (res[0].mess === 1) {
+                        alert("Registered Successfully!");
+                        $("#registerForm")[0].reset();
+                        window.location.href = "../Home/cusLogin";
+                    } else {
+                        alert("Error: " + res[0].error);
+                    }
+                }).fail(function () {
+                    alert("An error occurred during registration.");
+                });
+            });
+        });
+    </script>
+</body>
+</html>
